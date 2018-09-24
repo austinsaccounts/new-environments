@@ -1,12 +1,32 @@
 <html>
-
-<head>
-    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
-</head>
-
-<body>
-    <div>Hello, world!</div>
-    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  <head>
+      <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  </head>
+  <body>
+    <div class="master-wrapper">
+        <div id="landing">
+          <div class="wrapper">
+            <div class="header">
+              <h1><a href="index.html">Co-Co-A-Go-Go</a></h1>
+            </div>
+            <div class="content-link">
+              <h1><a href="tour.html">Enter</a></h1>
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="about">
+              <h1><a href="about.html">About Us</a></h1>
+            </div>
+            <div class="contact">
+              <h1><a href="contact.html">Contact Us</a></h1>
+            </div>
+            <div class="events">
+              <h1><a href="events.html">Events</a></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 
 </html>

@@ -1,0 +1,20 @@
+{
+  "name": "webpack-boilerplate",
+  "version": "1.0.0",
+  "description": "webpack-boilerplate is a project that provides webpack v4 boilerplates out-of-box to quickstart development. I decided to create it after writing a couple of medium blog posts https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-the-right-way-4e94c8e7e5c1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marharyta/webpack-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marharyta/webpack-boilerplate/issues"
+  },
+  "homepage": "https://github.com/marharyta/webpack-boilerplate#readme"
+}

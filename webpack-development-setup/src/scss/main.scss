@@ -1,3 +1,144 @@
-div {
-    color: red;
+// for compiling
+$darkmagenta: #853752;
+$pastelviolet: #cc8fa9;
+$pastelpink: #e095a2;
+$offwhite: #dedce9;
+$neutralbrown: #5a2d17;
+$neutralgreen: #314124;
+$neutralsienna: #67311a;
+$pastelplum: #54406d;
+$offblack: #080c0f;
+$darkblue: #0f273b;
+$neutralblue: #374a60;
+$neutralpuce: #68737e;
+$funteal: #6e9995;
+$funpink: #ef3c79;
+$western-font: 'Monoton', cursive;
+$playful-font: 'Yellowtail', cursive;
+$mobile-width: 767px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+$theme1: (
+bg-color: $pastelviolet,
+font-color: $funteal
+);
+
+$theme2: (
+bg-color: $funteal,
+font-color: $darkblue
+);
+
+$theme3: (
+bg-color: $darkmagenta,
+font-color: $funteal
+);
+
+
+@mixin colorswatch($theme){
+  color: map-get($theme, font-color);
+  background-color:  map-get($theme, bg-color);
+  a {
+    color: map-get($theme, font-color);
   }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$mobile-width +1px}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+body, html {
+  // overflow: hidden;
+  min-width: 100vw;
+  height:100%;
+}
+
+.master-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  background-size: cover;
+
+  @include mobile {
+    font-size: 1rem;
+    // background-image: url("./src/assets/images/room4-500.png");
+  }
+  @include tablet {
+    font-size: 1.4rem;
+   // background-image: url(../assets/images/room4-1000.png);
+  }
+  @include desktop {
+    font-size: 1.75rem;
+    //background-image: url(../assets/images/room4-2000.png);
+  }
+}
+
+.header {
+  h1 {
+  font-family: $western-font;
+  margin-top: -1%;
+  }
+}
+
+.footer-links  {
+  font-family: $western-font;
+  display: flex;
+  flex-direction: row;
+  flex: space-around;
+  div {
+    width: 33%;
+    text-align: center;
+    h1 {
+      margin-bottom: auto;
+      margin-top: auto;
+      font-size: 1.5em;
+    }
+  }
+}
+
+#landing {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .wrapper {
+    flex:1;
+  }
+
+  .header {
+    text-align: center;
+    @include colorswatch($theme1);
+    }
+
+  .content-link {
+    width: 350px;
+    margin: auto;
+    text-align: center;
+    @include colorswatch($theme3);
+    border-radius: 25px;
+    opacity: .7;
+    }
+
+  .footer-links {
+    @include colorswatch($theme2)
+    max-height: 100px;
+    margin-bottom:1px;
+  }
+}

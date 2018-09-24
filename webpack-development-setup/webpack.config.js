@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
+
 module.exports = {
   entry: { main: './src/index.js' },
   output: {
@@ -20,6 +21,19 @@ module.exports = {
   module: {
     rules: [
       {
+  test: /\.(gif|png|jpe?g|svg)$/i,
+  use: [
+    'file-loader',
+    {
+      loader: 'image-webpack-loader',
+      options: {
+        bypassOnDebug: true, // webpack@1.x
+        disable: true, // webpack@2.x and newer
+      },
+    },
+  ],
+},
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -30,7 +44,7 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
+          'MiniCssExtractPlugin.loader',
           'css-loader',
           'postcss-loader',
           'sass-loader'
